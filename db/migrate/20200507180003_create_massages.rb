@@ -4,7 +4,7 @@ class CreateMassages < ActiveRecord::Migration[5.0]
       t.text :body
       t.string :image
       t.references :users, foreign_key: true
-      t.references :groupnames, foreign_key: true
+      t.references :group, foreign_key: true
       t.timestamps
     end
   end

@@ -25,38 +25,38 @@ Things you may want to cover:
 
 ## usersテーブル
 
-|Column|Type|Options|Options|
-|------|----|-------|-------|
-|name|string|null: false|
+|Column|Type|Options|Options|Options|
+|------|----|-------|-------|-------|
+|name|string|null: false|index:true|
 |password|string|null: false|
-|email|string|null:false|unique: true|
+|email|string|null:false|unique: true|index:true|
 |reset_password_token|string|
 
 ### Association
-- belongs_to : groups_users
-- belongs_to : massage
+- has_many : groups_users
+- has_many : massage
 
 
 
 ## groupnamesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|groupnames|string|null: false|
+|name|string|null: false|
 
 ### Association
-- belongs_to : groups_users
-- belongs_to : massage
+- has_many : groups_users
+- has_many : massage
 
 ## groups_usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|foreign_key: true|
-|groupnames_id|references|foreign_key: true|
+|group_id|references|foreign_key: true|
 
 ### Association
-- has_many : users
-- has_many : groups
+- belongs_to : users
+- belongs_to : groups
 
 
 ## massageテーブル
@@ -66,11 +66,11 @@ Things you may want to cover:
 |body|text|
 |image|string|
 |users_id|references|foreign_key: true|
-|groupnames_id|references|foreign_key: true|
+|group_id|references|foreign_key: true|
 
 ### Association
-- has_many :user
-- has_many :groupnames
+- belongs_to :user
+- belongs_to :groupnames
 
 ### index
 - add_index :users,  [:name, :email]
