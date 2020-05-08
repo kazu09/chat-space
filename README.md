@@ -32,10 +32,20 @@ Things you may want to cover:
 |email|string|null:false|unique: true|
 |reset_password_token|string|
 
+### Association
+- belongs_to : groups_users
+- belongs_to : massage
+
+
+
 ## groupnamesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |groupnames|string|null: false|
+
+### Association
+- belongs_to : groups_users
+- belongs_to : massage
 
 ## groups_usersテーブル
 
@@ -44,7 +54,12 @@ Things you may want to cover:
 |user_id|references|foreign_key: true|
 |groupnames_id|references|foreign_key: true|
 
-## usersテーブル
+### Association
+- has_many : users
+- has_many : groups
+
+
+## massageテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -54,8 +69,8 @@ Things you may want to cover:
 |groupnames_id|references|foreign_key: true|
 
 ### Association
-- belongs_to :user
-- belongs_to :groupname
+- has_many :user
+- has_many :groupnames
 
 ### index
 - add_index :users,  [:name, :email]
