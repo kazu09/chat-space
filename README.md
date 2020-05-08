@@ -51,8 +51,8 @@ Things you may want to cover:
 
 |Column|Type|Options|Options|
 |------|----|-------|-------|
-|user_id|references|foreign_key: true|null: false|
-|group_id|references|foreign_key: true|null: false|
+|user|references|foreign_key: true|null: false|
+|group|references|foreign_key: true|null: false|
 
 ### Association
 - belongs_to : users
@@ -65,8 +65,8 @@ Things you may want to cover:
 |------|----|-------|-------|
 |body|text|
 |image|string|
-|users_id|references|foreign_key: true|null: false|
-|group_id|references|foreign_key: true|null: false|
+|users|references|foreign_key: true|null: false|
+|group|references|foreign_key: true|null: false|
 
 ### Association
 - belongs_to :user
