@@ -33,7 +33,7 @@ Things you may want to cover:
 |reset_password_token|string|
 
 ### Association
-- has_many :groups, through: :groups_users
+- has_many :groups,through: :groups_users
 - has_many : messages
 
 
@@ -44,7 +44,7 @@ Things you may want to cover:
 |name|string|null: false|
 
 ### Association
-- has_many : groups_users, through: :groups_users
+- has_many : groups_users,through: :groups_users
 - has_many : messages
 
 ## groups_usersテーブル
