@@ -33,8 +33,8 @@ Things you may want to cover:
 |reset_password_token|string|
 
 ### Association
-- has_many : groups_users
-- has_many : massage
+- has_many :groups, through: :groups_users
+- has_many : messages
 
 
 
@@ -44,33 +44,30 @@ Things you may want to cover:
 |name|string|null: false|
 
 ### Association
-- has_many : groups_users
-- has_many : massage
+- has_many : groups_users, through: :groups_users
+- has_many : messages
 
 ## groups_usersテーブル
 
-|Column|Type|Options|
-|------|----|-------|
-|user_id|references|foreign_key: true|
-|group_id|references|foreign_key: true|
+|Column|Type|Options|Options|
+|------|----|-------|-------|
+|user_id|references|foreign_key: true|null: false|
+|group_id|references|foreign_key: true|null: false|
 
 ### Association
 - belongs_to : users
-- belongs_to : groups
+- belongs_to : group
 
 
-## massageテーブル
+## messagesテーブル
 
-|Column|Type|Options|
-|------|----|-------|
+|Column|Type|Options|Options|
+|------|----|-------|-------|
 |body|text|
 |image|string|
-|users_id|references|foreign_key: true|
-|group_id|references|foreign_key: true|
+|users_id|references|foreign_key: true|null: false|
+|group_id|references|foreign_key: true|null: false|
 
 ### Association
 - belongs_to :user
-- belongs_to :groupnames
-
-### index
-- add_index :users,  [:name, :email]
+- belongs_to :group
