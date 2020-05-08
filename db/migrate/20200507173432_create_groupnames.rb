@@ -1,6 +1,6 @@
 class CreateGroupnames < ActiveRecord::Migration[5.0]
   def change
-    create_table :groupnames do |t|
+    create_table :groups do |t|
       t.string :name, null: false
       t.timestamps
     end
