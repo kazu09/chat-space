@@ -38,7 +38,7 @@ Things you may want to cover:
 
 
 
-## groupnamesテーブル
+## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
