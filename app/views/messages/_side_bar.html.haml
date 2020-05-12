@@ -1,0 +1,18 @@
+.side-bar
+  .user-name
+    .user-name__side-box
+      %p.user-name__side-box__user-name
+        aa
+      %ul.user-name__side-box__menu
+        %li.user-name__side-box__new-group
+          = link_to "#" do
+            = icon('fa', 'edit')
+        %li.user-name__side-box__edit-user
+          =link_to "#" do
+            = icon('fa', 'cog')
+  .group-list
+    = link_to "#", class:"group" do
+      %p.group__group-name
+        test
+      %p.group__group-message
+        メッセージはありません
