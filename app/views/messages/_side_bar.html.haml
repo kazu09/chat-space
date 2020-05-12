@@ -2,13 +2,13 @@
   .user-name
     .user-name__side-box
       %p.user-name__side-box__user-name
-        aa
+        = current_user.name
       %ul.user-name__side-box__menu
         %li.user-name__side-box__new-group
           = link_to "#" do
             = icon('fa', 'edit')
         %li.user-name__side-box__edit-user
-          =link_to "#" do
+          =link_to edit_user_path(current_user) do
             = icon('fa', 'cog')
   .group-list
     = link_to "#", class:"group" do
