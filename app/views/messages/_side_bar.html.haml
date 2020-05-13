@@ -5,14 +5,15 @@
         = current_user.name
       %ul.user-name__side-box__menu
         %li.user-name__side-box__new-group
-          = link_to "#" do
+          = link_to new_group_path do
             = icon('fa', 'edit')
         %li.user-name__side-box__edit-user
           =link_to edit_user_path(current_user) do
             = icon('fa', 'cog')
   .group-list
-    = link_to "#", class:"group" do
-      %p.group__group-name
-        test
-      %p.group__group-message
-        メッセージはありません
+    - current_user.groups.each do |group|
+      = link_to "#", class:"group" do
+        %p.group__group-name
+          = group.name
+        %p.group__group-message
+          メッセージはありません
