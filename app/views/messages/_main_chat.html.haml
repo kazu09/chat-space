@@ -2,15 +2,17 @@
   .group-info
     .group-info__left-box
       %h2.group-info__left-box__current-group{"data-group_id" => "#"}
-        ss
+        = @group.name
       %ul.group-info__left-box__member-list
         Menber:
         %li.group-info__left-box__member-list__member 
-          aaa
-    = link_to "#" do
+          - @group.users.each do |user|
+            = user.name
+    = link_to edit_group_path(@group.id) do
       .group-info__edit-btn edit
 
   .message-lists
+    = render @messages
     .message-list{"data-message_id" => "#"}
       .message-list__upper-info
         %p.message-list__upper-info__talker zxc
@@ -18,10 +20,19 @@
       %p.message-list__text  こんにちは
 
   .message-form
-    %form.new_massage
+    = form_for [@group, @message] do |f|
       .input-box
-        %input{class: "input-box__text", type: "text", placeholder:"type a message"}
-        %label{class: "input-box__image"}
-          = icon('far', 'image') 
-          %input{class: "input-box__image__file", type: "file"}
-      %input{class: "submit-btn", type:"submit", value:"Send"}
+        = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+        = f.label :image, class: 'input-box__image' do
+          = icon('fas', 'image')
+          = f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'Send', class: 'submit-btn'
+
+  -# .message-form
+  -#   %form.new_massage
+  -#     .input-box
+  -#       %input{class: "input-box__text", type: "text", placeholder:"type a message"}
+  -#       %label{class: "input-box__image"}
+  -#         = icon('far', 'image') 
+  -#         %input{class: "input-box__image__file", type: "file"}
+  -#     %input{class: "submit-btn", type:"submit", value:"Send"}
