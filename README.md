@@ -65,7 +65,7 @@ Things you may want to cover:
 
 |Column|Type|Options|Options|
 |------|----|-------|-------|
-|body|text|
+|content|string|
 |image|string|
 |users|references|foreign_key: true|null: false|
 |group|references|foreign_key: true|null: false|
