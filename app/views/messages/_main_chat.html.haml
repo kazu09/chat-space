@@ -13,11 +13,6 @@
 
   .message-lists
     = render @messages
-    .message-list{"data-message_id" => "#"}
-      .message-list__upper-info
-        %p.message-list__upper-info__talker zxc
-        %p.message-list__upper-info__date 2020/05/11(Mon) 16:01:48
-      %p.message-list__text  こんにちは
 
   .message-form
     = form_for [@group, @message] do |f|
