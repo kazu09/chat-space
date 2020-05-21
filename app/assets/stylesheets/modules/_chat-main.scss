@@ -45,22 +45,22 @@
     padding: 46px 40px;
     height: calc(100vh - 190px);
     .message {
-      padding-bottom: 46px;
-      &__upper-message{
+      padding-bottom: 40px;
+      .upper-message{
         display: flex;
-        &__user-name{
+        .user-name{
         color: #333333;
         font-size: 16px;
         margin-bottom: 12px;
         font-weight: bold;
         }
-        &__date{
+        .date{
         font-size: 12px;
         color: #999999;
         margin-left: 10px;
         }
       }
-      &__lower-message__content {
+      .lower-message__content {
         color: #434A54;
         font-size: 14px;
         margin-bottom: 10px;
